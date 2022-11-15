@@ -1,4 +1,4 @@
-#React Sakila App
+# React Sakila App
 
 This repository contains frontend code written using React to present the data contained in MySQL's Sakila database.
 
