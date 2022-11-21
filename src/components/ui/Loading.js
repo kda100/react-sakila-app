@@ -1,8 +1,8 @@
-import styles from "./styles.module.css";
+import classes from "./styles.module.css";
 
 function Loading() {
   return (
-    <div className={styles.center}>
+    <div className={classes.center}>
       <div className="spinner-border" role="status"></div>
     </div>
   );

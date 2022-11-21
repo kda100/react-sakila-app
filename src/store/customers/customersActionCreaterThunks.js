@@ -6,7 +6,7 @@ export const fetchCustomers = ({ countryId, sortBy, offset, pageSize }) => {
     try {
       dispatch(customerActions.loading());
       const response = await axios.get(
-        `http://localhost:8080/api/customers?countryId=${countryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
+        `${process.env.REACT_APP_BASE_URL}/api/customers?countryId=${countryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
       );
       if (response.status !== 200) {
         throw new Error();

@@ -1,7 +1,7 @@
-import styles from "./styles.module.css";
+import classes from "./styles.module.css";
 
 function Error(props) {
-  return <div className={styles.center}>{props.message}</div>;
+  return <div className={classes.center}>{props.message}</div>;
 }
 
 export default Error;

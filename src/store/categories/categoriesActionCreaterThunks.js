@@ -4,7 +4,9 @@ import { categoryActions } from "./categoriesSlice";
 export const fetchCategories = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/categories`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/api/categories`
+      );
       if (response.status !== 200) {
         throw new Error();
       }

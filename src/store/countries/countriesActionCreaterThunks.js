@@ -4,7 +4,9 @@ import { countryActions } from "./countriesSlice";
 export const fetchCountries = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/countries`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/api/countries`
+      );
       if (response.status !== 200) {
         throw new Error();
       }
