@@ -5,7 +5,7 @@ export const fetchCountries = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/countries`
+        `http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/countries`
       );
       if (response.status !== 200) {
         throw new Error();

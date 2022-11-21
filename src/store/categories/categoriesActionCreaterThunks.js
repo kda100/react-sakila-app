@@ -5,7 +5,7 @@ export const fetchCategories = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/categories`
+        `http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/categories`
       );
       if (response.status !== 200) {
         throw new Error();

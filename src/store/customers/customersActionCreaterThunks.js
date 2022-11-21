@@ -6,7 +6,7 @@ export const fetchCustomers = ({ countryId, sortBy, offset, pageSize }) => {
     try {
       dispatch(customerActions.loading());
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/customers?countryId=${countryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
+        `http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/customers?countryId=${countryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
       );
       if (response.status !== 200) {
         throw new Error();

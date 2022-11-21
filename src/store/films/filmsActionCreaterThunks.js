@@ -6,7 +6,7 @@ export const fetchFilms = ({ categoryId, sortBy, offset, pageSize }) => {
     try {
       dispatch(filmActions.loading());
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/films?categoryId=${categoryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
+        `http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/films?categoryId=${categoryId}&sortBy=${sortBy}&offset=${offset}&pageSize=${pageSize}`
       );
       if (response.status !== 200) {
         throw new Error();
