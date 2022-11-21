@@ -1,8 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import BasePage from "./pages/BasePage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import CustomersPage from "./pages/CustomersPage";
-import FilmsPage from "./pages/FilmsPage";
 import { Provider } from "react-redux";
 import store from "./store/index";
 import routes from "./constants/routes";

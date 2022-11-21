@@ -36,7 +36,7 @@ function FilmsQueryBar() {
       dispatch(fetchCategories());
     }
     isInitial = false;
-  }, []);
+  }, [dispatch]);
 
   if (categoriesState.isLoading) {
     return <div></div>;

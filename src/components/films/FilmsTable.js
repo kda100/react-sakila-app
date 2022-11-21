@@ -13,7 +13,7 @@ function FilmsTable() {
 
   useEffect(() => {
     dispatch(fetchFilms(filmsState.parameters));
-  }, [filmsState.parameters]);
+  }, [filmsState.parameters, dispatch]);
 
   if (filmsState.isLoading) {
     return <Loading />;

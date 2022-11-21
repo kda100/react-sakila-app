@@ -13,7 +13,7 @@ function CustomersTable() {
 
   useEffect(() => {
     dispatch(fetchCustomers(customersState.parameters));
-  }, [customersState.parameters]);
+  }, [customersState.parameters, dispatch]);
 
   if (customersState.isLoading) {
     return <Loading />;

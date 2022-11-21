@@ -36,7 +36,7 @@ function CustomersQueryBar() {
       dispatch(fetchCountries());
     }
     isInitial = false;
-  }, []);
+  }, [dispatch]);
 
   if (countriesState.isLoading) {
     return <div></div>;
