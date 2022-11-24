@@ -7,7 +7,7 @@ function FilmsPagination() {
   const offset = useSelector((state) => state.films.parameters.offset);
   const totalPages = useSelector((state) => state.films.totalPages);
 
-  function setOffset(offset) {
+  function setOffsetHandler(offset) {
     dispatch(filmActions.setOffset(offset));
   }
 
@@ -15,7 +15,7 @@ function FilmsPagination() {
     <CustomPagination
       currentOffset={offset}
       totalPages={totalPages}
-      onClickItem={setOffset}
+      onClickItem={setOffsetHandler}
     />
   );
 }

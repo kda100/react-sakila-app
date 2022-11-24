@@ -19,15 +19,15 @@ function FilmsQueryBar() {
     (state) => state.films.parameters
   );
 
-  function setCategoryId(categoryId) {
+  function setCategoryIdHandler(categoryId) {
     dispatch(filmActions.setCategoryId(categoryId));
   }
 
-  function setSortBy(sortBy) {
+  function setSortByHandler(sortBy) {
     dispatch(filmActions.setSortBy(sortBy));
   }
 
-  function setPageSize(pageSize) {
+  function setPageSizeHandler(pageSize) {
     dispatch(filmActions.setPageSize(pageSize));
   }
 
@@ -51,17 +51,17 @@ function FilmsQueryBar() {
       <FilterDropdown
         items={categoriesState.categories}
         currentId={categoryId}
-        onClickItem={setCategoryId}
+        onClickItem={setCategoryIdHandler}
       />
       <SortByDropdown
         items={sortByFields}
         currentSortBy={sortBy}
-        onClickItem={setSortBy}
+        onClickItem={setSortByHandler}
       />
       <PageSizeDropdown
         pageSizes={pageSizes}
         currentPageSize={pageSize}
-        onClickItem={setPageSize}
+        onClickItem={setPageSizeHandler}
       />
     </BaseQueryBar>
   );

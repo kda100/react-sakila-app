@@ -19,15 +19,15 @@ function CustomersQueryBar() {
     (state) => state.customers.parameters
   );
 
-  function setCountryId(countryId) {
+  function setCountryIdHandler(countryId) {
     dispatch(customerActions.setCountryId(countryId));
   }
 
-  function setSortBy(sortBy) {
+  function setSortByHandler(sortBy) {
     dispatch(customerActions.setSortBy(sortBy));
   }
 
-  function setPageSize(pageSize) {
+  function setPageSizeHandler(pageSize) {
     dispatch(customerActions.setPageSize(pageSize));
   }
 
@@ -51,17 +51,17 @@ function CustomersQueryBar() {
       <FilterDropdown
         items={countriesState.countries}
         currentId={countryId}
-        onClickItem={setCountryId}
+        onClickItem={setCountryIdHandler}
       />
       <SortByDropdown
         items={sortByFields}
         currentSortBy={sortBy}
-        onClickItem={setSortBy}
+        onClickItem={setSortByHandler}
       />
       <PageSizeDropdown
         pageSizes={pageSizes}
         currentPageSize={pageSize}
-        onClickItem={setPageSize}
+        onClickItem={setPageSizeHandler}
       />
     </BaseQueryBar>
   );

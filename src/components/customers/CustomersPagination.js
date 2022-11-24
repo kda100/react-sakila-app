@@ -7,7 +7,7 @@ function CustomersPagination() {
   const offset = useSelector((state) => state.customers.parameters.offset);
   const totalPages = useSelector((state) => state.customers.totalPages);
 
-  function setOffset(offset) {
+  function setOffsetHandler(offset) {
     dispatch(customerActions.setOffset(offset));
   }
 
@@ -15,7 +15,7 @@ function CustomersPagination() {
     <CustomPagination
       currentOffset={offset}
       totalPages={totalPages}
-      onClickItem={setOffset}
+      onClickItem={setOffsetHandler}
     />
   );
 }
