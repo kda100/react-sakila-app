@@ -1,4 +1,3 @@
-const sakilaServiceBaseUrl =
-  "http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com";
+const sakilaServiceBaseUrl = "https://www.allenapplicationapis.co.uk";
 
 export default sakilaServiceBaseUrl;
