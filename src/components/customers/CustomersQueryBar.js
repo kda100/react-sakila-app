@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { Fragment, useEffect, useCallback, useMemo } from "react";
 import { fetchCountries } from "../../store/countries/countriesActionCreaterThunks";
 import FilterDropdown from "../ui/dropdowns/FilterDropdown";
 import Error from "../ui/Error";
@@ -19,17 +19,24 @@ function CustomersQueryBar() {
     (state) => state.customers.parameters
   );
 
-  function setCountryIdHandler(countryId) {
+  const setCountryIdHandler = useCallback((countryId) => {
     dispatch(customerActions.setCountryId(countryId));
-  }
+  }, []);
 
-  function setSortByHandler(sortBy) {
+  const setSortByHandler = useCallback((sortBy) => {
     dispatch(customerActions.setSortBy(sortBy));
-  }
+  }, []);
 
-  function setPageSizeHandler(pageSize) {
+  const setPageSizeHandler = useCallback((pageSize) => {
     dispatch(customerActions.setPageSize(pageSize));
-  }
+  }, []);
+
+  const countriesMemo = useMemo(
+    () => countriesState.countries,
+    [countriesState.countries]
+  );
+  const sortByFieldsMemo = useMemo(() => sortByFields, []);
+  const pageSizesMemo = useMemo(() => pageSizes, []);
 
   useEffect(() => {
     if (isInitial) {
@@ -39,7 +46,7 @@ function CustomersQueryBar() {
   }, [dispatch]);
 
   if (countriesState.isLoading) {
-    return <div></div>;
+    return <Fragment></Fragment>;
   }
 
   if (countriesState.error != null) {
@@ -49,17 +56,17 @@ function CustomersQueryBar() {
   return (
     <BaseQueryBar>
       <FilterDropdown
-        items={countriesState.countries}
+        items={countriesMemo}
         currentId={countryId}
         onClickItem={setCountryIdHandler}
       />
       <SortByDropdown
-        items={sortByFields}
+        items={sortByFieldsMemo}
         currentSortBy={sortBy}
         onClickItem={setSortByHandler}
       />
       <PageSizeDropdown
-        pageSizes={pageSizes}
+        pageSizes={pageSizesMemo}
         currentPageSize={pageSize}
         onClickItem={setPageSizeHandler}
       />

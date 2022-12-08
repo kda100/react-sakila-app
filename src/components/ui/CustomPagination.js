@@ -1,4 +1,5 @@
 import Pagination from "react-bootstrap/Pagination";
+import React from "react";
 
 function CustomPagination(props) {
   let items = [];
@@ -16,4 +17,4 @@ function CustomPagination(props) {
   return <Pagination>{items}</Pagination>;
 }
 
-export default CustomPagination;
+export default React.memo(CustomPagination);

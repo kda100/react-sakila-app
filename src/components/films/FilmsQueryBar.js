@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { Fragment, useEffect, useCallback, useMemo } from "react";
 import { fetchCategories } from "../../store/categories/categoriesActionCreaterThunks";
 import FilterDropdown from "../ui/dropdowns/FilterDropdown";
 import Error from "../ui/Error";
@@ -19,17 +19,24 @@ function FilmsQueryBar() {
     (state) => state.films.parameters
   );
 
-  function setCategoryIdHandler(categoryId) {
+  const setCategoryIdHandler = useCallback((categoryId) => {
     dispatch(filmActions.setCategoryId(categoryId));
-  }
+  }, []);
 
-  function setSortByHandler(sortBy) {
+  const setSortByHandler = useCallback((sortBy) => {
     dispatch(filmActions.setSortBy(sortBy));
-  }
+  }, []);
 
-  function setPageSizeHandler(pageSize) {
+  const setPageSizeHandler = useCallback((pageSize) => {
     dispatch(filmActions.setPageSize(pageSize));
-  }
+  }, []);
+
+  const categoriesMemo = useMemo(
+    () => categoriesState.categories,
+    [categoriesState.categories]
+  );
+  const sortByFieldsMemo = useMemo(() => sortByFields, []);
+  const pageSizesMemo = useMemo(() => pageSizes, []);
 
   useEffect(() => {
     if (isInitial) {
@@ -39,7 +46,7 @@ function FilmsQueryBar() {
   }, [dispatch]);
 
   if (categoriesState.isLoading) {
-    return <div></div>;
+    return <Fragment></Fragment>;
   }
 
   if (categoriesState.error != null) {
@@ -49,17 +56,17 @@ function FilmsQueryBar() {
   return (
     <BaseQueryBar>
       <FilterDropdown
-        items={categoriesState.categories}
+        items={categoriesMemo}
         currentId={categoryId}
         onClickItem={setCategoryIdHandler}
       />
       <SortByDropdown
-        items={sortByFields}
+        items={sortByFieldsMemo}
         currentSortBy={sortBy}
         onClickItem={setSortByHandler}
       />
       <PageSizeDropdown
-        pageSizes={pageSizes}
+        pageSizes={pageSizesMemo}
         currentPageSize={pageSize}
         onClickItem={setPageSizeHandler}
       />
