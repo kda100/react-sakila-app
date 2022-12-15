@@ -37,7 +37,7 @@ export default function useQuery(
 
   const filtersMemo = useMemo(() => filterState.filters, [filterState.filters]);
   const sortBysMemo = useMemo(() => sortBys, [sortBys]);
-  const pageSizesMemo = useMemo(() => pageSizes, [pageSizes]);
+  const pageSizesMemo = useMemo(() => pageSizes, []);
 
   useEffect(() => {
     if (filterState.isInitial) {
