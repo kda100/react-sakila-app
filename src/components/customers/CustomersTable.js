@@ -1,30 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchCustomers } from "../../store/customers/customersActionCreaterThunks";
+import { fetchCustomers } from "../../store/items/customers/customersActionCreaterThunks";
 import tableHeaders from "../../constants/customers/tableHeaders";
 import Loading from "../ui/Loading";
 import Error from "../ui/Error";
 import CustomTable from "../ui/table/CustomTable";
 import CustomersTableContent from "./CustomersTableContent";
+import useItemsState from "../../hooks/useItemsState";
+import { customersType } from "../../constants/customSelectorTypes";
 
 function CustomersTable() {
-  const dispatch = useDispatch();
-  const customersState = useSelector((state) => state.customers);
-
-  useEffect(() => {
-    dispatch(fetchCustomers(customersState.parameters));
-  }, [customersState.parameters, dispatch]);
-
-  if (customersState.isLoading) {
-    return <Loading />;
-  }
-  if (customersState.error != null) {
-    return <Error message={customersState.error} />;
-  }
-
   return (
-    <CustomTable tableHeaders={tableHeaders}>
-      <CustomersTableContent customers={customersState.customers} />
+    <CustomTable
+      tableHeaders={tableHeaders}
+      itemsSelectorType={customersType}
+      fetchItems={fetchCustomers}
+    >
+      <CustomersTableContent />
     </CustomTable>
   );
 }

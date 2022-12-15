@@ -17,7 +17,7 @@ function NavBar() {
             navbarScroll
           >
             {routes.map((route) => (
-              <Nav.Link as={Link} to={route.route}>
+              <Nav.Link key={route.route} as={Link} to={route.route}>
                 {route.name}
               </Nav.Link>
             ))}

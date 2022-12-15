@@ -1,14 +1,25 @@
 import Pagination from "react-bootstrap/Pagination";
 import React from "react";
+import usePagination from "../../hooks/usePagination";
 
 function CustomPagination(props) {
+  const {
+    offset: currentOffset,
+    totalPages,
+    setOffsetHandler,
+  } = usePagination(
+    props.offsetSelectorType,
+    props.totalPagesSelectorType,
+    props.itemActions
+  );
+
   let items = [];
-  for (let offset = 0; offset < props.totalPages; offset++) {
+  for (let offset = 0; offset < totalPages; offset++) {
     items.push(
       <Pagination.Item
         key={offset}
-        active={offset === props.currentOffset}
-        onClick={() => props.onClickItem(offset)}
+        active={offset === currentOffset}
+        onClick={() => setOffsetHandler(offset)}
       >
         {offset + 1}
       </Pagination.Item>
@@ -17,4 +28,4 @@ function CustomPagination(props) {
   return <Pagination>{items}</Pagination>;
 }
 
-export default React.memo(CustomPagination);
+export default CustomPagination;

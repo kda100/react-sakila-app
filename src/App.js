@@ -13,7 +13,11 @@ function App() {
         <BasePage>
           <Routes>
             {routes.map((route) => (
-              <Route path={route.route} element={route.page} />
+              <Route
+                key={route.route}
+                path={route.route}
+                element={route.page}
+              />
             ))}
             <Route path="*" element={<Navigate to={filmsRoute.route} />} />
           </Routes>

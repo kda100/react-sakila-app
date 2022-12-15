@@ -1,7 +1,7 @@
-function FilmsTableContent(props) {
+function FilmsTableContent({ items: films }) {
   return (
     <tbody>
-      {props.films.map((film) => (
+      {films.map((film) => (
         <tr key={film.id}>
           <td>{film.id}</td>
           <td>{film.title}</td>

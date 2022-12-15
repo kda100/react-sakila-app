@@ -1,7 +1,7 @@
-function CustomersTableContent(props) {
+function CustomersTableContent({ items: customers }) {
   return (
     <tbody>
-      {props.customers.map((customer) => (
+      {customers.map((customer) => (
         <tr key={customer.id}>
           <td>{customer.id}</td>
           <td>{customer.firstName}</td>
