@@ -9,7 +9,7 @@ function PageSizeDropdown(props) {
     return props.pageSizes.find(
       (pageSize) => pageSize === props.currentPageSize
     );
-  }, [props.currentPageSize]);
+  }, [props.currentPageSize, props.pageSizes]);
 
   return (
     <BaseDropdown>

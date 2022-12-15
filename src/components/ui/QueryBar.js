@@ -11,7 +11,7 @@ function QueryBar(props) {
     setPageSizeHandler,
     setSortByHandler,
     filters,
-    filterState: filterState,
+    filterState,
     parameters: { filterId, sortBy, pageSize },
     sortBys,
     pageSizes,

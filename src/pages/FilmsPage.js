@@ -7,7 +7,6 @@ import {
   filmParametersType,
   categoriesType,
 } from "../constants/customSelectorTypes";
-import { fetchFilms } from "../store/items/films/filmsActionCreaterThunks";
 import QueryBar from "../components/ui/QueryBar";
 import sortBys from "../constants/films/sortBys";
 import { fetchCategories } from "../store/filters/categories/categoriesActionCreaterThunks";

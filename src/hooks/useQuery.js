@@ -36,14 +36,14 @@ export default function useQuery(
   );
 
   const filtersMemo = useMemo(() => filterState.filters, [filterState.filters]);
-  const sortBysMemo = useMemo(() => sortBys, []);
-  const pageSizesMemo = useMemo(() => pageSizes, []);
+  const sortBysMemo = useMemo(() => sortBys, [sortBys]);
+  const pageSizesMemo = useMemo(() => pageSizes, [pageSizes]);
 
   useEffect(() => {
     if (filterState.isInitial) {
       dispatch(fetchFilters());
     }
-  }, [dispatch, filterState.isInitial]);
+  }, [dispatch, filterState.isInitial, fetchFilters]);
 
   return {
     setFilterIdHandler,
