@@ -5,7 +5,9 @@ import BaseDropdown from "./BaseDropdownButton";
 import BaseDropdownList from "./BaseDropDownList";
 
 function SortByDropdown(props) {
+  console.log("SortByDropdown");
   const currentSortBy = useMemo(() => {
+    console.log("currentSortBy");
     return props.items.find((item) => item.sortBy === props.currentSortBy).name;
   }, [props.currentSortBy, props.items]);
 

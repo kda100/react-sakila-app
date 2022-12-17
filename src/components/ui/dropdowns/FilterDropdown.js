@@ -5,7 +5,9 @@ import BaseDropdownList from "./BaseDropDownList";
 import React, { useMemo } from "react";
 
 function FilterDropdown(props) {
+  console.log("FilterDropdown");
   const currentFilter = useMemo(() => {
+    console.log("currentFilter");
     return props.items.find((item) => item.id === props.currentId).name;
   }, [props.currentId, props.items]);
 

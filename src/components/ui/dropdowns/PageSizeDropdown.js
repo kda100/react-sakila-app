@@ -5,7 +5,9 @@ import BaseDropdownList from "./BaseDropDownList";
 import React, { useMemo } from "react";
 
 function PageSizeDropdown(props) {
+  console.log("PageSizeDropdown");
   const currentPageSize = useMemo(() => {
+    console.log("currentPageSize");
     return props.pageSizes.find(
       (pageSize) => pageSize === props.currentPageSize
     );
