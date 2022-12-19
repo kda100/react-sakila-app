@@ -5,10 +5,6 @@ import useQuery from "../../hooks/useQuery";
 import { Fragment } from "react";
 import Error from "./Error";
 
-/**
- * Component for displaying and controlling the state of query bar.
- */
-
 function QueryBar(props) {
   const {
     setFilterIdHandler,

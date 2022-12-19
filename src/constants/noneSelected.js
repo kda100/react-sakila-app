@@ -1,3 +1,3 @@
-const noneSelected = { id: -1, name: "None Selected" }; //none selected type for dropdown.
+const noneSelected = { id: -1, name: "None Selected" };
 
 export default noneSelected;

@@ -4,10 +4,6 @@ import CustomTable from "../ui/table/CustomTable";
 import CustomersTableContent from "./CustomersTableContent";
 import { customersType } from "../../constants/customSelectorTypes";
 
-/**
- * component to display data of customers as a table
- */
-
 function CustomersTable() {
   return (
     <CustomTable

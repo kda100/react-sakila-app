@@ -1,7 +1,3 @@
-/**
- * Wrapper component for dropdown components.
- */
-
 function BaseDropdown(props) {
   return <div className="me-2">{props.children}</div>;
 }

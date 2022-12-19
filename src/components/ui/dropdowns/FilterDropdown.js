@@ -4,14 +4,8 @@ import BaseDropdown from "./BaseDropdownButton";
 import BaseDropdownList from "./BaseDropDownList";
 import React, { useMemo } from "react";
 
-/**
- * Dropdown component for filters
- */
-
 function FilterDropdown(props) {
   console.log("FilterDropdown");
-
-  //stores what filter has been selected.
   const currentFilter = useMemo(() => {
     console.log("currentFilter");
     return props.items.find((item) => item.id === props.currentId).name;

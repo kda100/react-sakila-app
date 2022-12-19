@@ -1,3 +1,3 @@
-const pageSizes = [25, 50, 75, 100]; //page size options
+const pageSizes = [25, 50, 75, 100];
 
 export default pageSizes;

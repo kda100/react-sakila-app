@@ -1,7 +1,3 @@
-/**
- * Components to display data of customers as a row.
- */
-
 function CustomersTableContent({ items: customers }) {
   return (
     <tbody>

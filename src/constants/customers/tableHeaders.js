@@ -5,6 +5,6 @@ const tableHeaders = [
   "Email",
   "City",
   "Country",
-]; //Customer table headers
+];
 
 export default tableHeaders;

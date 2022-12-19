@@ -1,7 +1,3 @@
-/**
- * Component to present table headers.
- */
-
 function TableHeader(props) {
   return (
     <thead>

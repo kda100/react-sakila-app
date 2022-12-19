@@ -4,10 +4,6 @@ import FilmsTableContent from "./FilmsTableContent";
 import tableHeaders from "../../constants/films/tableHeaders";
 import { filmsType } from "../../constants/customSelectorTypes";
 
-/**
- * component to display data of films as a table
- */
-
 function FilmsTable() {
   return (
     <CustomTable

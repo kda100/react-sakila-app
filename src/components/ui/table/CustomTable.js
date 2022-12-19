@@ -5,10 +5,6 @@ import Error from "../Error";
 import useItemsState from "../../../hooks/useItemsState";
 import React from "react";
 
-/**
- * Wrapper table component
- */
-
 function CustomTable(props) {
   const itemsState = useItemsState(props.itemsSelectorType, props.fetchItems);
 
@@ -19,7 +15,6 @@ function CustomTable(props) {
     return <Error message={itemsState.error} />;
   }
 
-  //React.cloneElement clones children and adds items as a prop.
   return (
     <Table striped bordered hover>
       <TableHeader tableHeaders={props.tableHeaders} />

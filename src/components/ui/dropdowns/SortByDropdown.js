@@ -4,14 +4,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import BaseDropdown from "./BaseDropdownButton";
 import BaseDropdownList from "./BaseDropDownList";
 
-/**
- * Dropdown component for sort bys
- */
-
 function SortByDropdown(props) {
   console.log("SortByDropdown");
-
-  //stores what sort by has been selected.
   const currentSortBy = useMemo(() => {
     console.log("currentSortBy");
     return props.items.find((item) => item.sortBy === props.currentSortBy).name;

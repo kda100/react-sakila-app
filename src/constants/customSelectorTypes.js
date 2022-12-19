@@ -1,5 +1,3 @@
-//custom selector types for useSelector hook.
-
 export const filmsType = "films";
 export const filmParametersType = "film-parameters";
 export const filmParametersOffsetType = "film-parameters-offset";
