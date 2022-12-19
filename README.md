@@ -10,4 +10,4 @@ To prevent unneccessary functional components re-executing code, the useCallback
 
 To reduce code duplication in components; custom react hooks were used and to reduce code duplication in redux stores; custom 'createSlice' functions were created.
 
-Available at: https://main--dulcet-faun-daa7fe.netlify.app
+<!-- Available at: https://main--dulcet-faun-daa7fe.netlify.app -->
