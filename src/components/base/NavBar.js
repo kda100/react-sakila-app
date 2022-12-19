@@ -4,6 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import routes from "../../constants/routes";
 
+/**
+ * Navigation Bar of SPA
+ */
+
 function NavBar() {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">

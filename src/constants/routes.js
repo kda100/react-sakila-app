@@ -1,6 +1,8 @@
 import CustomersPage from "../pages/CustomersPage";
 import FilmsPage from "../pages/FilmsPage";
 
+//route objects for different pages.
+
 export const filmsRoute = {
   name: "Films",
   route: "/films",

@@ -4,8 +4,14 @@ import BaseDropdown from "./BaseDropdownButton";
 import BaseDropdownList from "./BaseDropDownList";
 import React, { useMemo } from "react";
 
+/**
+ * Dropdown component for page sizes
+ */
+
 function PageSizeDropdown(props) {
   console.log("PageSizeDropdown");
+
+  //stores what page size has been selected.
   const currentPageSize = useMemo(() => {
     console.log("currentPageSize");
     return props.pageSizes.find(

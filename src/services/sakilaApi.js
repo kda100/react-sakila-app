@@ -1,3 +1,3 @@
-const sakilaServiceBaseUrl = "https://www.allenapplicationapis.co.uk/api";
+const sakilaServiceBaseUrl = "http://localhost:8080/api";
 
 export default sakilaServiceBaseUrl;

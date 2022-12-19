@@ -1,6 +1,12 @@
 import { useSelector } from "react-redux";
 import * as selectorTypes from "../constants/customSelectorTypes";
 
+/**
+ * Extension of useSelectorHook to only return predefined state object
+ * @param {String} selectorType
+ * @returns {any} the selected state
+ */
+
 export default function useCustomSelector(selectorType) {
   let stateFn = (state) => {};
   switch (selectorType) {
