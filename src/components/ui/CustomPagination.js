@@ -2,6 +2,10 @@ import Pagination from "react-bootstrap/Pagination";
 import React from "react";
 import usePagination from "../../hooks/usePagination";
 
+/**
+ * Component to display pages and page numbers and control its state
+ */
+
 function CustomPagination(props) {
   const {
     offset: currentOffset,

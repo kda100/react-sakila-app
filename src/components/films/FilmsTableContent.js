@@ -1,3 +1,7 @@
+/**
+ * Components to display data of films as a row.
+ */
+
 function FilmsTableContent({ items: films }) {
   return (
     <tbody>
