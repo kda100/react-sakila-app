@@ -10,10 +10,11 @@ import {
 import QueryBar from "../components/ui/QueryBar";
 import sortBys from "../constants/films/sortBys";
 import { fetchCategories } from "../store/filters/categories/categoriesActionCreaterThunks";
+import { Fragment } from "react";
 
 function FilmsPage() {
   return (
-    <div>
+    <Fragment>
       <QueryBar
         parametersSelectorType={filmParametersType}
         filterSelectorType={categoriesType}
@@ -27,7 +28,7 @@ function FilmsPage() {
         itemActions={filmActions}
       />
       <FilmsTable />
-    </div>
+    </Fragment>
   );
 }
 

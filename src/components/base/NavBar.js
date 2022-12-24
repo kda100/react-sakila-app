@@ -3,12 +3,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import routes from "../../constants/routes";
+import useCustomNavigation from "../../hooks/useCustomNavigation";
 
 /**
  * Navigation Bar of SPA
  */
 
 function NavBar() {
+  const currRoute = useCustomNavigation();
+
+  console.log(currRoute);
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container fluid>
@@ -21,7 +25,12 @@ function NavBar() {
             navbarScroll
           >
             {routes.map((route) => (
-              <Nav.Link key={route.route} as={Link} to={route.route}>
+              <Nav.Link
+                key={route.route}
+                as={Link}
+                to={route.route}
+                active={route.route === currRoute}
+              >
                 {route.name}
               </Nav.Link>
             ))}

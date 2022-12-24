@@ -10,10 +10,11 @@ import {
 import { customerActions } from "../store/items/customers/customersSlice";
 import sortBys from "../constants/customers/sortBys";
 import { fetchCountries } from "../store/filters/countries/countriesActionCreaterThunks";
+import { Fragment } from "react";
 
 function CustomersPage() {
   return (
-    <div>
+    <Fragment>
       <QueryBar
         parametersSelectorType={customerParametersType}
         filterSelectorType={countriesType}
@@ -27,7 +28,7 @@ function CustomersPage() {
         itemActions={customerActions}
       />
       <CustomersTable />
-    </div>
+    </Fragment>
   );
 }
 

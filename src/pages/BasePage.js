@@ -1,13 +1,14 @@
 import NavBar from "../components/base/NavBar";
 import Footer from "../components/base/Footer";
+import { Fragment } from "react";
 
 function BasePage(props) {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <Fragment>
       <NavBar />
-      <div className="m-3">{props.children}</div>
+      <main className="m-3">{props.children}</main>
       <Footer />
-    </div>
+    </Fragment>
   );
 }
 
