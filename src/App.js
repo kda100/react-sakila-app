@@ -3,8 +3,8 @@ import BasePage from "./pages/BasePage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/index";
-import routes from "./constants/routes";
-import { filmsRoute } from "./constants/routes";
+import routes from "./routing/routes";
+import { filmsRoute } from "./routing/routes";
 
 function App() {
   return (

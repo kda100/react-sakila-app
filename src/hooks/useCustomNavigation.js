@@ -1,4 +1,4 @@
-import routes from "../constants/routes";
+import routes from "../routing/routes";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 

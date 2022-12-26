@@ -10,6 +10,11 @@ import React, { useMemo } from "react";
 
 function FilterDropdown(props) {
   console.log("FilterDropdown");
+  props.items.find((item) => {
+    console.log(item.id, props.currentId);
+    console.log(item.id === props.currentId);
+    return item.id === props.currentId;
+  });
 
   //stores what filter has been selected.
   const currentFilter = useMemo(() => {

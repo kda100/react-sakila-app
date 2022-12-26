@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import useCustomSelector from "./useCustomSelector";
 import pageSizes from "../constants/pageSizes";
 import { Dispatch } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * Hook to control the state of query bar including: filter, page size and sort by.
