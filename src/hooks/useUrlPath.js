@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import useCustomSelector from "./useCustomSelector";
 
-export default function useUrlPath(route, parametersSelectorType, itemActions) {
+export default function useUrlPath(parametersSelectorType, itemActions) {
   const dispatch = useDispatch();
   const parameters = useCustomSelector(parametersSelectorType);
   const [urlParams, setUrlParams] = useSearchParams();
-  let isInitial = false;
+  const isInitial = useRef(true);
 
   useEffect(() => {
     if (Array.from(urlParams).length !== 0) {
@@ -21,14 +21,13 @@ export default function useUrlPath(route, parametersSelectorType, itemActions) {
       dispatch(itemActions.setPageSize(+pageSize));
       dispatch(itemActions.setSortBy(sortBy));
       dispatch(itemActions.setOffset(+offset));
-    } else {
-      setUrlParams(parameters);
     }
-    isInitial = true;
+    setUrlParams(parameters);
+    isInitial.current = false;
   }, []);
 
   useEffect(() => {
-    if (!isInitial) {
+    if (!isInitial.current) {
       setUrlParams(parameters);
     }
   }, [parameters]);

@@ -5,22 +5,26 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 import routes from "./routing/routes";
 import { filmsRoute } from "./routing/routes";
+import { Suspense } from "react";
+import Loading from "./components/ui/Loading";
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <BasePage>
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.route}
-                path={route.route}
-                element={route.page}
-              />
-            ))}
-            <Route path="*" element={<Navigate to={filmsRoute.route} />} />
-          </Routes>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  key={route.route}
+                  path={route.route}
+                  element={route.page}
+                />
+              ))}
+              <Route path="*" element={<Navigate to={filmsRoute.route} />} />
+            </Routes>
+          </Suspense>
         </BasePage>
       </BrowserRouter>
     </Provider>

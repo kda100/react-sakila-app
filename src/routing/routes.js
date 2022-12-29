@@ -1,6 +1,8 @@
-import CustomersPage from "../pages/CustomersPage";
-import FilmsPage from "../pages/FilmsPage";
 import RouteData from "../utils/RouteData";
+import React from "react";
+
+const FilmsPage = React.lazy(() => import("../pages/FilmsPage"));
+const CustomersPage = React.lazy(() => import("../pages/CustomersPage"));
 
 export const filmsRoute = new RouteData("Films", "/films", <FilmsPage />);
 

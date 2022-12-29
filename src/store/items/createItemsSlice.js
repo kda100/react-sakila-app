@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import pageSizes from "../../constants/pageSizes";
 
 const initialState = {
   items: [],
@@ -13,7 +14,11 @@ const initialState = {
   },
 };
 
-export default function createItemsSlice(name) {
+export default function createItemsSlice(
+  name,
+  maxFilterId = 100,
+  sortBys = []
+) {
   return createSlice({
     name: name,
     initialState: initialState,
@@ -27,18 +32,29 @@ export default function createItemsSlice(name) {
         state.isLoading = false;
       },
       setFilterId(state, action) {
-        state.parameters.filterId = action.payload;
+        const isValidFilterId =
+          action.payload <= maxFilterId && action.payload >= -1;
+        state.parameters.filterId = isValidFilterId ? action.payload : -1;
         state.parameters.offset = 0;
       },
       setSortBy(state, action) {
-        state.parameters.sortBy = action.payload;
+        const sortBy = sortBys.find(
+          (sortBy) => sortBy.sortBy === action.payload
+        );
+        console.log(sortBy);
+        state.parameters.sortBy = sortBy ? action.payload : "id";
         state.parameters.offset = 0;
       },
       setOffset(state, action) {
         state.parameters.offset = action.payload;
       },
       setPageSize(state, action) {
-        state.parameters.pageSize = action.payload;
+        const isValidPageSize = pageSizes.find(
+          (pageSize) => pageSize === action.payload
+        );
+        state.parameters.pageSize = isValidPageSize
+          ? action.payload
+          : pageSizes[0];
         state.parameters.offset = 0;
       },
       setError(state, action) {

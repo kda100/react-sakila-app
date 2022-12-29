@@ -12,10 +12,9 @@ import sortBys from "../constants/films/sortBys";
 import { fetchCategories } from "../store/filters/categories/categoriesActionCreaterThunks";
 import { Fragment } from "react";
 import useUrlPath from "../hooks/useUrlPath";
-import { filmsRoute } from "../routing/routes";
 
 function FilmsPage() {
-  useUrlPath(filmsRoute, filmParametersType, filmActions);
+  useUrlPath(filmParametersType, filmActions);
   return (
     <Fragment>
       <QueryBar
