@@ -3,7 +3,7 @@ import * as selectorTypes from "../constants/customSelectorTypes";
 
 /**
  * Extension of useSelectorHook to only return predefined state object
- * @param {String} selectorType
+ * @param {string} selectorType
  * @returns {any} the selected state
  */
 

@@ -5,8 +5,8 @@ import { Dispatch } from "react";
 
 /**
  * Hook to control state of items as well as api fetch calls.
- * @param {String} itemsSelectorType
- * @param {(parameters: { filterId: String, sortBy: String, offset:Number, pageSize: Number }) => ((dispatch: Dispatch<AnyAction>) => void)} fetchItems
+ * @param {string} itemsSelectorType
+ * @param {(parameters: { filterId: string, sortBy: string, offset:number, pageSize: number }) => ((dispatch: Dispatch<AnyAction>) => void)} fetchItems
  * @returns {any} the items state
  */
 

@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 
 /**
  * Hook to control the state of current page (offset - starts at 0) and total pages.
- * @param {String} offsetSelectorType
- * @param {String} totalPagesSelectorType
+ * @param {string} offsetSelectorType
+ * @param {string} totalPagesSelectorType
  * @param {any} itemActions
- * @returns {{offset: Number, totalPages: Number, setOffsetHandler: (offset: Number) => void}} {offset, total pages, setOffsetHandler}
+ * @returns {{offset: number, totalPages: number, setOffsetHandler: (offset: number) => void}} {offset, total pages, setOffsetHandler}
  */
 
 export default function usePagination(

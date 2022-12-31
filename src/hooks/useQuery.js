@@ -7,20 +7,20 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * Hook to control the state of query bar including: filter, page size and sort by.
- * @param {String} parametersSelectorType
- * @param {String} filterSelectorType
- * @param {Array<{name: String, sortBy: String}>} sortBys
+ * @param {string} parametersSelectorType
+ * @param {string} filterSelectorType
+ * @param {Array<{name: string, sortBy: string}>} sortBys
  * @param {any} itemActions
  * @param {() => ((dispatch: Dispatch<AnyAction>) => void)} fetchFilters
  * @returns {{
- * setFilterIdHandler: (filterId: Number) => void,
- * setPageSizeHandler: (pageSize: Number) => void,
- * setSortByHandler: (sortBy: String) => void,
+ * setFilterIdHandler: (filterId: number) => void,
+ * setPageSizeHandler: (pageSize: number) => void,
+ * setSortByHandler: (sortBy: string) => void,
  * filterState: any,
- * filtersMemo: Array<{id: Number, name: String}>,
- * parameters: { filterId: String, sortBy: String, offset:Number, pageSize: Number },
- * sortBys: {Array<{name: String, sortBy: String}>},
- * pageSizes: {Array<Number>}
+ * filtersMemo: Array<{id: number, name: string}>,
+ * parameters: { filterId: string, sortBy: string, offset:number, pageSize: number },
+ * sortBys: {Array<{name: string, sortBy: string}>},
+ * pageSizes: {Array<number>}
  * }} {setFilterIdHandler, setPageSizeHandler, setSortByHandler, filterState, filtersMemo, parameters, sortBys, pageSizes}
  */
 
