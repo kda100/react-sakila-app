@@ -79,7 +79,6 @@ export default function useQuery(
       dispatch(fetchFilters());
     }
   }, [dispatch, filterState.isInitial, fetchFilters]);
-
   return {
     setFilterIdHandler,
     setPageSizeHandler,
